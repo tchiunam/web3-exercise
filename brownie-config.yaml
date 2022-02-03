@@ -1,0 +1,31 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1"
+dotenv: .env
+networks:
+  development:
+    verify: False
+  ganache-local:
+    verify: False
+  ropsten:
+    eth_usd_price_feed: "0x8468b2bDCE073A157E560AA4D9CcF6dB1DB98507"
+    verify: True
+wallets:
+  local-cli:
+    - address: "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"
+      private_key: ${LOCAL_CLI_WALLET_0_PRIVATE_KEY}
+    - address: "0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0"
+      private_key: ${LOCAL_CLI_WALLET_1_PRIVATE_KEY}
+    - address: "0x22d491Bde2303f2f43325b2108D26f1eAbA1e32b"
+      private_key: ${LOCAL_CLI_WALLET_2_PRIVATE_KEY}
+    - address: "0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e"
+      private_key: ${LOCAL_CLI_WALLET_3_PRIVATE_KEY}
+  local-ui:
+    - address: "0x087C56b7EFa666034dcBE93b92FB8e662F80B4dE"
+      private_key: ${LOCAL_UI_WALLET_0_PRIVATE_KEY}
+  metamask:
+    - address: "0x199b0021D48b938DF485d2e0748F3665438FAe7b"
+      private_key: ${METAMASK_WALLET_0_PRIVATE_KEY}
